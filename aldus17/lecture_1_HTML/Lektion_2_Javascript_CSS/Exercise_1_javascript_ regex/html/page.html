@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Index</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+</head>
+
+<body>
+    <a id="a">Click the button</a>
+    <button onclick="myFunction();">click me </button>
+
+    <p id="p1">Hello World!</p>
+    <p id="p2">Hello World!</p>
+    <p id="name"></p>
+
+    <input type="button" id="button" value="Random number" class="button"></input>
+    <p id="message">To be updated</p>
+
+</body>
+
+<script>
+    document.getElementById("p2").style.color = "blue";
+    document.getElementById("p2").style.fontFamily = "Arial";
+    document.getElementById("p2").style.fontSize = "larger";
+
+    function myFunction() {
+        if (confirm("Are you sure ? ")) {
+            document.getElementById("a").style.color = "blue";
+        } else {
+            document.getElementById("a").style.color = "red";
+        }
+    }
+
+    var person = {
+        firstName: "Abraham",
+        lastName: "Woodhull",
+        codeName: "Samuel Culper",
+        codeNumber: "722",
+        fullName: function() {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    document.getElementById("name").innerHTML = person.fullName();
+
+    var button = document.getElementById("button");
+
+    function changeText() {
+        document.getElementById("message").innerHTML = Math.floor(Math.random() * 100) + 1;
+
+    }
+
+    button.addEventListener("click", changeText);
+</script>
+
+<footer>
+
+</footer>
