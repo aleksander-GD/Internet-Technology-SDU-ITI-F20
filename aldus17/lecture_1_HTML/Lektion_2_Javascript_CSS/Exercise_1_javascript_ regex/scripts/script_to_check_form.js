@@ -1,4 +1,8 @@
-console.log("js successfully loaded")
+console.log("js successfully loaded");
+
+document.addEventListener('DOMContentLoaded', function() {
+    checkForm();
+});
 
 function checkForm() {
     checkWords();

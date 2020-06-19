@@ -3,8 +3,9 @@
     }
     
     body {
-        margin: 0px;
+        margin: auto;
         text-align: center;
+        float: center;
     }
     
     nav.menu {
@@ -16,6 +17,7 @@
         overflow: hidden;
         margin: 0px auto;
         padding: 0px;
+        z-index: 1;
     }
     
     nav.menu ul {
@@ -63,7 +65,7 @@
     
     div.content {
         background-color: #C1B3BD;
-        width: 70%;
+        width: 60%;
         height: 100%;
         max-width: 100%;
         max-height: 100%;
@@ -71,25 +73,71 @@
         padding-top: 50px;
     }
     
-    div.profile {
-        height: 150px;
-        width: 150px;
-    }
-    
-    div.person {
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 100%;
+        max-height: 100%;
+        margin: 30px;
+        padding: 15px;
+        text-align: center;
+        font-family: arial;
+        display: block;
         position: relative;
-        margin: 10px auto;
-        display: inline-block;
+        background-color: #668cff;
     }
     
-    div.person img {
+    div.card .profile_picture {
+        background-color: #668cff;
+    }
+    
+    div.card .profile_picture img {
+        width: 10%;
         float: left;
-        width: 120px;
         border: 6px solid white;
         border-radius: 100%;
         margin: 0 auto;
-        display: table;
-        position: relative;
+    }
+    
+    div.card .content_picture {
+        background-color: #668cff;
+        padding: 50px;
+    }
+    
+    div.card .content_picture img {
+        width: 100%;
+        border: 1px solid;
+        border-radius: 5%;
+        margin: 0 auto;
+    }
+    
+    .profile_content {
+        float: center;
+        text-align: right;
+    }
+    
+    .profile_content p {
+        float: center;
+        text-align: left;
+    }
+    
+    .profile {
+        display: block;
+        background-color: #668cff;
+    }
+    
+    .name {
+        float: left;
+        background-color: #668cff;
+    }
+    
+    .profile_content p {
+        background-color: #668cff;
+        padding: 10px;
+        margin: 0;
+    }
+    
+    .profile_content .title {
+        font-size: 30px;
     }
     
     h3.advertisingText {

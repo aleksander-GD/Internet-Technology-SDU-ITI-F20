@@ -1,0 +1,8 @@
+body {
+    text-align: center;
+    margin-top: 300px;
+}
+
+div.form_wrapper {
+    display: inline-block;
+}
