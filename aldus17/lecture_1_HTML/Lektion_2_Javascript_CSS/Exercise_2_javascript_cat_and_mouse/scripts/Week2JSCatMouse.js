@@ -13,6 +13,9 @@ screen
 */
 
 document.addEventListener('DOMContentLoaded', function() {
+    window.onload = function() {
+        newGame();
+    };
     document.addEventListener('keydown', keypress);
 
     setInterval(gameloop, 16);
@@ -28,11 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('highscore').innerText = highscore;
     }
 
-
-
-
     var player = {
-        element: document.createElement("img"),
+        element: document.getElementById("player"),
         type: "player",
         x: 100,
         y: 100,
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     var cheese = {
-        element: document.createElement("img"),
+        element: document.createElement("IMG"),
         type: "cheese",
         x: 0,
         y: 0,
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     var enemy = {
-        element: document.createElement("img"),
+        element: document.createElement("IMG"),
         type: "enemy",
         x: 0,
         y: 0,
@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     spawn(enemy);
 
     function keypress(e) {
+
         if (e.code == "KeyR" && gameEnded) {
             newGame();
         } else if (e.code == "KeyP") {
@@ -78,9 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
         player.speed = 3;
         player.x = 100;
         player.y = 100;
-        player.element.src = "../images/jerry_mouse.png";
-        var src = document.getElementById("player");
-        src.element.appendChild(src);
+
+        /*  player.element = document.createElement("IMG");
+
+         console.log("Success");
+         player.element.src = "../images/jerry_mouse.png";
+         var playerElementID = document.getElementById("player");
+         playerElementID.setAttribute("src", "../images/jerry_mouse.png"); */
+
 
         cheese.element.remove();
         enemy.element.remove();
@@ -214,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function spawn(object) {
 
-        object.element = document.createElement("img");
+        object.element = document.createElement("IMG");
         if (object === cheese) {
             object.element.src = "../images/cheese.png";
         }

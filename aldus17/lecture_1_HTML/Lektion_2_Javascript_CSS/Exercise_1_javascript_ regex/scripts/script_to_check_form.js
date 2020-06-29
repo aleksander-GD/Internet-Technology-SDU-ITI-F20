@@ -14,85 +14,55 @@ function checkForm() {
 // https://regex101.com/
 // https://regexr.com/
 
-let emailInputField = document.getElementById("name");
-
-emailInputField.addEventListener("", checkWords);
-
 function checkWords() {
     var word = document.getElementById("name").value;
+    var wordRegex = new RegExp(/(^(\w+\s).+$)/g);
 
-    var regEx = new RegExp(/(^(\w+\s).+$)/g);
-
-    if (regEx.test(word)) {
-        changeLabelColor("nameLabelID", "green");
-        return true;
-    } else {
-        changeLabelColor("nameLabelID", "red");
-        return false;
-    }
+    checkRegex(word, wordRegex, 'nameLabelID');
 }
 
 function checkPassword() {
     var password = document.getElementById("password").value;
-    //var regEx = new RegExp(/([a-z0-9A-Z]{8,})/g);
 
     // "^$" whole string and needs to end with /gm, m means multiline, "?=.*" look for one or more of the following occourence, the ".*" means any char except line break
-    // 
-    var regEx = new RegExp(/((?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\w).[\S]{8,})/g);
+    var passwordRegex = new RegExp(/((?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\w).[\S]{8,})/g);
 
-    if (regEx.test(password)) {
-        changeLabelColor("passwordLabelID", "green");
-        return true;
-    } else {
-        changeLabelColor("passwordLabelID", "red");
-        return false;
-    }
+    checkRegex(password, passwordRegex, 'passwordLabelID');
 }
 
 function checkPhoneNumber() {
     var phoneNumber = document.getElementById("phone").value;
-    var regEx = new RegExp(/(?:\+)(?:[0-9]{8,30})/g);
+    var phoneNumberRegex = new RegExp(/(?:\+)(?:[0-9]{8,30})/g);
 
-    if (regEx.test(phoneNumber)) {
-        changeLabelColor("phoneLabelID", "green");
-        return true;
-
-    } else {
-        changeLabelColor("phoneLabelID", "red");
-        return false;
-    }
+    checkRegex(phoneNumber, phoneNumberRegex, 'phoneLabelID');
 }
 
 function checkEmailAddress() {
     var email = document.getElementById("email").value;
-    var regEx = new RegExp(/(\b[\w\.-]+@[\w\.-]+\.\w{2,10}\b)/gi);
+    var emailRegex = new RegExp(/(\b[\w\.-]+@[\w\.-]+\.\w{2,10}\b)/gi);
 
-    if (regEx.test(email)) {
-        changeLabelColor("emailLabelID", "green");
-        return true;
-
-    } else {
-        changeLabelColor("emailLabelID", "red");
-        return false;
-    }
-
+    checkRegex(email, emailRegex, 'emailLabelID');
 }
 
 // Use let as a attribute for the function, like private. 
 
 function checkZipcode() {
-    var email = document.getElementById("zip").value;
-    var regEx = new RegExp(/^\d{4}$/gm);
+    var zipcode = document.getElementById("zip").value;
+    var zipcodeRegex = new RegExp(/^\d{4}$/gm);
 
-    if (regEx.test(email)) {
-        changeLabelColor("zipLabelID", "green");
+    checkRegex(zipcode, zipcodeRegex, 'zipLabelID');
+}
+
+function checkRegex(element, regexObject, labelID) {
+
+    if (regexObject.test(element)) {
+        changeLabelColor(labelID, "green");
         return true;
 
     } else {
-        changeLabelColor("zipLabelID", "red");
+        changeLabelColor(labelID, "red");
         return false;
     }
-
 }
 
 function changeLabelColor(labelName, color) {
