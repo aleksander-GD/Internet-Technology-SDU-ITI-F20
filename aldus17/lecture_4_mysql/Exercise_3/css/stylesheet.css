@@ -1,0 +1,63 @@
+#library_table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#library_table td,
+#library_table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#library_table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#library_table tr:hover {
+    background-color: rgb(93, 155, 196);
+}
+
+#library_table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4f81bd;
+    color: white;
+}
+
+#searchbtn {
+    background-color: #4f81bd;
+    border: none;
+    border-color: rgb(46, 65, 105);
+    border-radius: 2px;
+    border-style: solid;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5px 25px 5px 25px;
+}
+
+#searchbtn:hover {
+    background-color: #4f81bd
+}
+
+#searchbtn:active {
+    background-color: #4f81bd;
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+}
+
+#search {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #4f81bd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

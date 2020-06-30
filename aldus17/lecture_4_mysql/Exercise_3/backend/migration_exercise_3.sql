@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS db_exercise_2;
-CREATE DATABASE IF NOT EXISTS db_exercise_2;
-USE db_exercise_2;
+DROP DATABASE IF EXISTS db_exercise_3;
+CREATE DATABASE IF NOT EXISTS db_exercise_3;
+USE db_exercise_3;
 
 DROP TABLE IF EXISTS author;
 DROP TABLE IF EXISTS book;
