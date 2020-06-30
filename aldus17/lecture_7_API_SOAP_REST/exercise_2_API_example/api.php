@@ -116,6 +116,11 @@ if (strpos($http_response_header[0], "200")) {
 
     <?php else : ?>
         I didn't GET your NAME
+        <form action="api.php?name=">
+            <label for="fname">Enter your name:</label>
+            <input type="text" id="name" name="name"><br>
+            <input type="submit" value="Submit">
+        </form>
     <?php endif; ?>
 
 
