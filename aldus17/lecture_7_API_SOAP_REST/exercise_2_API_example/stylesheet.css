@@ -1,0 +1,29 @@
+div.content {
+    margin: 0 auto;
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 90%;
+    min-width: 100px;
+}
+
+div.left {
+    width: 20%;
+}
+
+div.right {
+    width: 79%;
+}
+
+div.left,
+div.right {
+    display: inline-block;
+}
+
+img.dog {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
